@@ -1,0 +1,39 @@
+.container{
+	height: 100%;
+	display: grid;
+	grid-row-gap: 40px;
+	grid-column-gap: 20px;
+	grid-template-columns: 0fr 0fr 0fr 0fr;
+	grid-template-rows: 23% 23% 23% 23%;
+	align-items: center;
+	justify-content: center;
+}
+
+.card{
+	position: relative;
+	height: 200px;
+	width: 170px;
+	margin: 5px;
+}
+
+.card .flip{
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+}
+
+.card:hover .flip{
+	transform: rotateY(180deg);
+}
+
+.front-card, .back-card{
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.back-card{
+	transform: rotateY(180deg);
+}
+
+.front-card img, .back-card img{
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
